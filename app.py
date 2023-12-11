@@ -44,7 +44,7 @@ def detecte_face(img):
         check = False
         return img_pixels, 25, 25, check
 
-@app.route("/vid_emotion", methods=['GET', 'POST'])
+@app.route('/vid_emotion', methods=['GET', 'POST'])
 def vid_emotion():
     if 'video' not in request.files:
         return "No file part"
@@ -87,11 +87,11 @@ def vid_emotion():
     video_path = f"{app.config['UPLOAD_FOLDER']}/videos/results/{file.filename}"
     return send_file(video_path, mimetype='video/mp4', as_attachment=True)
 
-@app.route("/check", methods =['GET'])
+@app.route('/check', methods =['GET'])
 def check():
     return jsonify({'status': 200, 'message': "Welcome to AWS EC2"})
 
-@app.route("/img_emotion", methods=['GET', 'POST'])
+@app.route('/img_emotion', methods=['GET', 'POST'])
 def img_emotion():
     if 'frame' not in request.files:
         return "No file part"
@@ -122,9 +122,9 @@ def img_emotion():
 
     return jsonify({'emotion':predicted_emotion})
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def hello_world():
 	return 'Hello World!!'
 
 if __name__=='__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=8000)
