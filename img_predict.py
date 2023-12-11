@@ -87,6 +87,10 @@ def vid_emotion():
     video_path = f"{app.config['UPLOAD_FOLDER']}/videos/results/{file.filename}"
     return send_file(video_path, mimetype='video/mp4', as_attachment=True)
 
+@app.route("/check", methods =['GET'])
+def check():
+    return jsonify({'status': 200, 'message': "Welcome to AWS EC2"})
+
 @app.route("/img_emotion", methods=['GET', 'POST'])
 def img_emotion():
     if 'frame' not in request.files:
