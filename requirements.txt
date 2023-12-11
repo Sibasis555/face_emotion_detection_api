@@ -1,12 +1,7 @@
-blinker==1.7.0
-Flask==3.0.0
-Flask-Cors==4.0.0
-Jinja2==3.1.2
-keras==2.15.0
-numpy==1.26.2
-opencv-python==4.8.1.78
-requests==2.31.0
-requests-oauthlib==1.3.1
+flask
+flask_cors
+numpy
 tensorboard==2.15.1
-tensorflow==2.15.0
+tensorflow
 urllib3==2.1.0
+opencv-python
