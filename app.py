@@ -122,5 +122,9 @@ def img_emotion():
 
     return jsonify({'emotion':predicted_emotion})
 
+@app.route('/')
+def hello_world():
+	return 'Hello World!'
+
 if __name__=='__main__':
     app.run(debug=True)
