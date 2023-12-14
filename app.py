@@ -85,7 +85,8 @@ def vid_emotion():
     cap.release()
     output.release()
     video_path = f"{app.config['UPLOAD_FOLDER']}/videos/results/{file.filename}"
-    return send_file(video_path, mimetype='video/mp4', as_attachment=True)
+    # return send_file(video_path, mimetype='video/mp4', as_attachment=True)
+    return jsonify({'vid_path': video_path})
 
 @app.route('/img_emotion', methods=['GET', 'POST'])
 def img_emotion():
@@ -120,11 +121,11 @@ def img_emotion():
 
 @app.route('/check', methods =['GET','POST'])
 def check():
-    return jsonify({'status': 200, 'message': "Welcome to AWS EC2"})
+    return jsonify({'status': 200, 'message': "Welcome to AWS EC2 Sibasis Sahoo"})
 
 @app.route('/', methods=['GET', 'POST'])
 def hello_world():
-	return 'Hello World!!!'
+	return 'Hello Sibasis!!!'
 
 if __name__=='__main__':
     app.run(debug=True)
